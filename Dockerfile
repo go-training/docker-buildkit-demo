@@ -9,8 +9,8 @@ ENV GO111MODULE=on
 # We want to populate the module cache based on the go.{mod,sum} files.
 COPY go.mod .
 COPY go.sum .
-COPY main.go .
 RUN go mod download
+COPY main.go .
 
 ENV GOOS=linux
 ENV GOARCH=amd64
