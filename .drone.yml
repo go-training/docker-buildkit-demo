@@ -45,7 +45,6 @@ steps:
   settings:
     auto_tag: true
     daemon_off: false
-    cache_from: appleboy/gin-docker-buildkit
     dockerfile: Dockerfile.buildkit
     password:
       from_secret: docker_password
