@@ -36,3 +36,22 @@ steps:
     event:
       exclude:
       - pull_request
+
+- name: docker-buildkit
+  pull: always
+  image: plugins/docker:linux-amd64
+  environment:
+    DOCKER_BUILDKIT: 1
+  settings:
+    auto_tag: true
+    daemon_off: false
+    dockerfile: Dockerfile.buildkit
+    password:
+      from_secret: docker_password
+    repo: appleboy/gin-docker-demo
+    username:
+      from_secret: docker_username
+  when:
+    event:
+      exclude:
+      - pull_request
