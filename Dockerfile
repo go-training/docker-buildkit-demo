@@ -11,9 +11,11 @@ COPY go.mod .
 COPY go.sum .
 RUN go mod download
 COPY main.go .
+COPY foo/foo.go foo/
+COPY bar/bar.go bar/
 
 ENV GOOS=linux
 ENV GOARCH=amd64
-RUN go build -o /app -tags netgo -ldflags '-w -extldflags "-static"' .
+RUN go build -o /app -v -tags netgo -ldflags '-w -extldflags "-static"' .
 
 CMD ["/app"]

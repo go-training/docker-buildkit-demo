@@ -12,9 +12,11 @@ COPY go.mod .
 COPY go.sum .
 RUN --mount=type=cache,target=/go/pkg/mod go mod download
 COPY main.go .
+COPY foo/foo.go foo/
+COPY bar/bar.go bar/
 
 ENV GOOS=linux
 ENV GOARCH=amd64
-RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build go build -o /app -tags netgo -ldflags '-w -extldflags "-static"' .
+RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build go build -o /app -v -tags netgo -ldflags '-w -extldflags "-static"' .
 
 CMD ["/app"]
