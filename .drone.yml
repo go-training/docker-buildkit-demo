@@ -48,7 +48,7 @@ steps:
     dockerfile: Dockerfile.buildkit
     password:
       from_secret: docker_password
-    repo: appleboy/gin-docker-demo
+    repo: appleboy/gin-docker-buildkit
     username:
       from_secret: docker_username
   when:
