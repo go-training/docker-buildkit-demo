@@ -3,7 +3,7 @@ FROM golang:1.14-alpine
 
 LABEL maintainer="Bo-Yi Wu <appleboy.tw@gmail.com>"
 
-RUN apk add bash ca-certificates git gcc g++ libc-dev
+RUN --mount=type=cache,target=/var/cache/apk apk add bash ca-certificates git gcc g++ libc-dev
 WORKDIR /app
 # Force the go compiler to use modules
 ENV GO111MODULE=on
