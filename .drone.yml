@@ -19,11 +19,9 @@ steps:
 #       exclude:
 #       - tag
 
-- name: publish
+- name: default-publish
   pull: always
   image: plugins/docker:linux-amd64
-  environment:
-    DOCKER_BUILDKIT: 1
   settings:
     auto_tag: true
     cache_from: appleboy/gin-docker-demo

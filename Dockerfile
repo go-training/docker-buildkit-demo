@@ -10,6 +10,7 @@ ENV GO111MODULE=on
 COPY go.mod .
 COPY go.sum .
 COPY main.go .
+RUN go mod download
 
 ENV GOOS=linux
 ENV GOARCH=amd64
