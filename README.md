@@ -52,7 +52,7 @@ RUN go build -o /app -v -tags netgo -ldflags '-w -extldflags "-static"' .
 CMD ["/app"]
 ```
 
-and run `make build`
+update the source code and run `make build`
 
 ```sh
 docker build --progress=plain -t appleboy/docker-demo -f Dockerfile .
@@ -118,9 +118,9 @@ RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache
 CMD ["/app"]
 ```
 
-run `make buildkit`
+update the source code and run `make buildkit`
 
-```
+```sh
 docker build --progress=plain -t appleboy/docker-buildkit -f Dockerfile.buildkit .
 #16 [stage-0 10/10] RUN --mount=type=cache,target=/go/pkg/mod --mount=type=c...
 #16 0.381 gin/foo
