@@ -2,7 +2,7 @@
 
 [![Build Status](https://cloud.drone.io/api/badges/go-training/docker-buildkit-demo/status.svg)](https://cloud.drone.io/go-training/docker-buildkit-demo)
 
-Docker Build is one of the most used features of the Docker Engine. See the [reference](https://docs.docker.com/develop/develop-images/build_enhancements/)
+Docker Build is one of the most used features of the Docker Engine. See the [reference](https://docs.docker.com/develop/develop-images/build_enhancements/) and [docker buildkit readme](https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md).
 
 ## Prepare
 
@@ -24,7 +24,7 @@ set daemon configuration in `/etc/docker/daemon.json` feature to true and restar
 }
 ```
 
-## Build without buildkit
+## Build image without buildkit
 
 docker build without buildkit. See the Dockerfile
 
@@ -89,7 +89,7 @@ docker build --progress=plain -t appleboy/docker-demo -f Dockerfile .
 #14 DONE 7.8s
 ```
 
-## Build with buildkit
+## Build image with buildkit
 
 See the dockerfile
 
