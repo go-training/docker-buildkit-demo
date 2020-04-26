@@ -52,7 +52,7 @@ RUN go build -o /app -v -tags netgo -ldflags '-w -extldflags "-static"' .
 CMD ["/app"]
 ```
 
-update the source code and run `export DOCKER_BUILDKIT=1 make build`
+update the source code and run `DOCKER_BUILDKIT=1 make build`
 
 ```sh
 docker build --progress=plain -t appleboy/docker-demo -f Dockerfile .
@@ -118,7 +118,7 @@ RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache
 CMD ["/app"]
 ```
 
-update the source code and run `export DOCKER_BUILDKIT=1 make buildkit`
+update the source code and run `DOCKER_BUILDKIT=1 make buildkit`
 
 ```sh
 docker build --progress=plain -t appleboy/docker-buildkit -f Dockerfile.buildkit .
